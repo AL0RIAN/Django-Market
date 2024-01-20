@@ -3,7 +3,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -14,7 +13,6 @@ SECRET_KEY = 'django-insecure-g#e$s-&+&t%&&hp3ejrlse7p92(b2j$gn_1k5sj6(g$ip-3qrc
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -28,6 +26,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +60,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myshop.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -71,7 +69,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -91,7 +88,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -102,7 +98,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -120,3 +115,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 CART_SESSION_ID = 'cart'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51OYrCZI4HzTXUyHbf5bSix6J875PaRxoDj7oQPCs5tpk75QzhAxKJXazl4UO841h64nWx3Qbyh2gWEiSqpUTambw00LhUwNrNM'
+STRIPE_SECRET_KEY = 'sk_test_51OYrCZI4HzTXUyHbgDPDFBBg2dpXiHcJfZPZbWnnIVAvY6bo4BuS1Gi3AkEDEKj9soWF8nOg1SL6db9vpDcDgyuJ00fBl8knbT'
+STRIPE_API_VERSION = '2023-10-16'
+STRIPE_WEBHOOK_SECRET = 'whsec_9d695c967fa07bcaf938bcbd9e4d747da7ad4408c11152eddb331a69bd343403'
