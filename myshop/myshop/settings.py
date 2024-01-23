@@ -103,6 +103,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -116,7 +117,7 @@ CART_SESSION_ID = 'cart'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-STRIPE_PUBLISHABLE_KEY = ''
-STRIPE_SECRET_KEY = ''
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51OYrCZI4HzTXUyHbf5bSix6J875PaRxoDj7oQPCs5tpk75QzhAxKJXazl4UO841h64nWx3Qbyh2gWEiSqpUTambw00LhUwNrNM'
+STRIPE_SECRET_KEY = 'sk_test_51OYrCZI4HzTXUyHbgDPDFBBg2dpXiHcJfZPZbWnnIVAvY6bo4BuS1Gi3AkEDEKj9soWF8nOg1SL6db9vpDcDgyuJ00fBl8knbT'
 STRIPE_API_VERSION = '2023-10-16'
-STRIPE_WEBHOOK_SECRET = ''
+STRIPE_WEBHOOK_SECRET = 'whsec_9d695c967fa07bcaf938bcbd9e4d747da7ad4408c11152eddb331a69bd343403'
