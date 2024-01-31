@@ -1,0 +1,12 @@
+asgiref==3.7.2
+celery==5.3.6
+Django==5.0
+django-localflavor==4.0
+django-parler==2.3
+django-rosetta==0.10.0
+flower==1.1.0
+Pillow==10.1.0
+redis==5.0.1
+sqlparse==0.4.4
+stripe==7.12.0
+WeasyPrint==60.2
