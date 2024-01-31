@@ -1,4 +1,5 @@
 from pathlib import Path
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,11 +29,15 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
     'coupons.apps.CouponsConfig',
+    'rosetta',
+    'parler',
+    'localflavor',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -92,7 +97,25 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
+LANGUAGES = [
+    ('en', _('English')),
+    ('ru', _('Russian')),
+]
+LOCALE_PATHS = [
+    BASE_DIR / 'locale'
+]
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en'},
+        {'code': 'ru'},
+    ),
+    'default': {
+        'fallback': 'en',
+        'hide_untranslated': False,
+    }
+}
 
 TIME_ZONE = 'UTC'
 
@@ -118,10 +141,10 @@ CART_SESSION_ID = 'cart'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-STRIPE_PUBLISHABLE_KEY = 'pk_test_51OYrCZI4HzTXUyHbf5bSix6J875PaRxoDj7oQPCs5tpk75QzhAxKJXazl4UO841h64nWx3Qbyh2gWEiSqpUTambw00LhUwNrNM'
-STRIPE_SECRET_KEY = 'sk_test_51OYrCZI4HzTXUyHbgDPDFBBg2dpXiHcJfZPZbWnnIVAvY6bo4BuS1Gi3AkEDEKj9soWF8nOg1SL6db9vpDcDgyuJ00fBl8knbT'
+STRIPE_PUBLISHABLE_KEY = 'YOUR_SECRET'
+STRIPE_SECRET_KEY = 'YOUR_SECRET'
 STRIPE_API_VERSION = '2023-10-16'
-STRIPE_WEBHOOK_SECRET = 'whsec_9d695c967fa07bcaf938bcbd9e4d747da7ad4408c11152eddb331a69bd343403'
+STRIPE_WEBHOOK_SECRET = 'YOUR_SECRET'
 
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
