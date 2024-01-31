@@ -47,16 +47,6 @@ STRIPE_API_VERSION = '2023-10-16'
 STRIPE_WEBHOOK_SECRET = 'YOUR_SECRET'
 ```
 
-### Runserver
-
-Use my self-signed certificate and use the command:
-
-```
-$ python manage.py runserver_plus --cert-file cert.crt
-```
-
-> Recommended to use Mozilla Firefox
-
 ## Main paths
 
 - /
